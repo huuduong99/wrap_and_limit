@@ -1,7 +1,8 @@
 name: wrap_and_limit
 description: "A new Flutter project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/huuduong99/wrap_and_limit
+issue_tracker: https://github.com/huuduong99/wrap_and_limit/issues
 
 environment:
   sdk: ^3.3.4
