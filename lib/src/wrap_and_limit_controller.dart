@@ -9,18 +9,18 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-/// A controller that manages the logic for displaying child widgets within a 
-/// `Wrap` layout, ensuring that the number of rows does not exceed a specified 
-/// maximum (`maxRow`). It calculates the number of child widgets to display, 
+/// A controller that manages the logic for displaying child widgets within a
+/// `Wrap` layout, ensuring that the number of rows does not exceed a specified
+/// maximum (`maxRow`). It calculates the number of child widgets to display,
 /// handles overflow logic, and notifies the UI when updates are required.
 ///
-/// This controller is useful for scenarios where you need to limit the number 
-/// of rows in a `Wrap` layout and display an overflow widget when the content 
+/// This controller is useful for scenarios where you need to limit the number
+/// of rows in a `Wrap` layout and display an overflow widget when the content
 /// exceeds the available space.
 ///
 /// ### Features:
 /// - Tracks the sizes of child widgets and an overflow widget.
-/// - Calculates the number of child widgets that can fit within the specified 
+/// - Calculates the number of child widgets that can fit within the specified
 ///   maximum rows and width.
 /// - Determines whether an overflow widget needs to be displayed.
 /// - Notifies listeners when the layout needs to be updated.
@@ -34,26 +34,26 @@ import 'package:flutter/material.dart';
 /// - `isCounted`: Indicates whether the number of children has been calculated.
 /// - `isRendered`: Indicates whether the row has been rendered for measurement.
 /// - `showChildCount`: The number of child widgets to display.
-/// - `hasOverflow`: Indicates whether there is overflow (i.e., the overflow 
+/// - `hasOverflow`: Indicates whether there is overflow (i.e., the overflow
 ///   widget needs to be displayed).
 /// - `maxWidth`: The maximum width of the `Wrap`.
 /// - `rowHeight`: The height of the current row.
 ///
 /// ### Methods:
-/// - `updateChildrenSize(int index, Size size)`: Updates the size of a specific 
+/// - `updateChildrenSize(int index, Size size)`: Updates the size of a specific
 ///   child widget after measurement.
-/// - `updateOverflowSize(Size size)`: Updates the size of the overflow widget 
+/// - `updateOverflowSize(Size size)`: Updates the size of the overflow widget
 ///   after measurement.
-/// - `updateMaxWidth(double maxWidth)`: Updates the maximum width of the `Wrap` 
+/// - `updateMaxWidth(double maxWidth)`: Updates the maximum width of the `Wrap`
 ///   layout.
-/// - `_calculateVisibleChildren()`: Calculates the number of child widgets that 
-///   can be displayed within the specified constraints and determines whether 
+/// - `_calculateVisibleChildren()`: Calculates the number of child widgets that
+///   can be displayed within the specified constraints and determines whether
 ///   the overflow widget needs to be displayed.
 ///
 /// ### Usage:
-/// Instantiate the `WrapAndLimitController` with the required parameters, and 
-/// use it to manage the layout of child widgets in a `Wrap`. Update the sizes 
-/// of child widgets and the overflow widget as they are measured, and listen 
+/// Instantiate the `WrapAndLimitController` with the required parameters, and
+/// use it to manage the layout of child widgets in a `Wrap`. Update the sizes
+/// of child widgets and the overflow widget as they are measured, and listen
 /// for changes to update the UI accordingly.
 /// Controller that handles the logic for calculating the number of child widgets to display,
 /// checking for overflow, and notifying the UI to update.

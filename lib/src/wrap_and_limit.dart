@@ -10,33 +10,33 @@ import 'package:provider/provider.dart';
 import 'package:wrap_and_limit/src/measure_size.dart';
 import 'package:wrap_and_limit/src/wrap_and_limit_controller.dart';
 
-/// A Flutter widget that displays a list of child widgets in a `Wrap` layout, 
-/// limits the number of rows displayed to a specified maximum (`maxRow`), 
+/// A Flutter widget that displays a list of child widgets in a `Wrap` layout,
+/// limits the number of rows displayed to a specified maximum (`maxRow`),
 /// and shows an overflow widget when the number of children exceeds the limit.
 ///
-/// This widget is useful for scenarios where you want to display a limited 
-/// number of rows in a flexible layout and provide a visual indication of 
+/// This widget is useful for scenarios where you want to display a limited
+/// number of rows in a flexible layout and provide a visual indication of
 /// additional content that is not displayed.
 ///
 /// ### Parameters:
 ///
 /// - `children`: A list of widgets to display in the `Wrap` layout.
-/// - `maxRow`: The maximum number of rows to display in the `Wrap`. If the 
+/// - `maxRow`: The maximum number of rows to display in the `Wrap`. If the
 ///   number of rows exceeds this value, the overflow widget will be displayed.
 /// - `spacing`: The spacing between child widgets in the `Wrap`. Defaults to `4.0`.
 /// - `runSpacing`: The spacing between rows in the `Wrap`. Defaults to `4.0`.
 /// - `alignment`: The alignment of child widgets within each row. Defaults to `WrapAlignment.end`.
-/// - `overflowWidget`: A function that takes the count of remaining children 
+/// - `overflowWidget`: A function that takes the count of remaining children
 ///   beyond the `maxRow` and returns a widget to display as the overflow indicator.
 ///
 /// ### Behavior:
 ///
-/// - The widget uses a `LayoutBuilder` to measure the available width and 
-///   dynamically calculate the number of children that can fit within the 
+/// - The widget uses a `LayoutBuilder` to measure the available width and
+///   dynamically calculate the number of children that can fit within the
 ///   specified `maxRow`.
-/// - If the number of children exceeds the limit, the `overflowWidget` is 
+/// - If the number of children exceeds the limit, the `overflowWidget` is
 ///   displayed to indicate the overflow.
-/// - The widget uses a `WrapAndLimitController` to manage the layout logic 
+/// - The widget uses a `WrapAndLimitController` to manage the layout logic
 ///   and notify listeners when the layout changes.
 ///
 /// ### Example Usage:
@@ -52,8 +52,8 @@ import 'package:wrap_and_limit/src/wrap_and_limit_controller.dart';
 /// )
 /// ```
 ///
-/// In this example, the widget will display up to 2 rows of items, and if 
-/// there are more items, it will show a text widget indicating the number of 
+/// In this example, the widget will display up to 2 rows of items, and if
+/// there are more items, it will show a text widget indicating the number of
 /// remaining items.
 /// Widget that displays a list of children in a Wrap layout,
 /// limits the number of rows displayed by `maxRow`, and shows an overflow widget when exceeded.
