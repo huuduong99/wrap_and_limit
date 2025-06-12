@@ -1,5 +1,5 @@
 name: wrap_and_limit
-description: "A new Flutter project."
+description: "A Flutter Wrap widget that builds a special wrap, limiting the number of rows and the count of the remaining children in the last row."
 version: 0.0.1
 homepage: https://github.com/huuduong99/wrap_and_limit
 issue_tracker: https://github.com/huuduong99/wrap_and_limit/issues
