@@ -108,7 +108,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Wrap and More"),
+          title: const Text("Wrap and Limit"),
         ),
         body: Row(
           children: [
