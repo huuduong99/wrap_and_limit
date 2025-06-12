@@ -27,7 +27,9 @@ You can use this widget to achieve:
 
 ## Features
 
-![example_image_1.png](example_image_1.png)![example_image_2.png](example_image_2.png)![example_image_3.png](example_image_3.png)
+![example_image_1.png](https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_1.png)
+![example_image_2.png](https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_2.png)
+![example_image_3.png](https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_3.png)
 
 ## Getting started
 
