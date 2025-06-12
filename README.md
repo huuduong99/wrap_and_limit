@@ -42,10 +42,7 @@ dependencies:
 ```
 
 ## Usage
-
-This library doesn't use other library, so it should work out of the box.
-
-Import `wrap_and_limit.dart`.
+Now in your Dart code, you can use:
 
 ```dart
 import 'package:wrap_and_limit/wrap_and_limit.dart';
