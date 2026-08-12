@@ -27,9 +27,11 @@ You can use this widget to achieve:
 
 ## Features
 
-![example_image_1.png](https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_1.png)
-![example_image_2.png](https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_2.png)
-![example_image_3.png](https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_3.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_1.png" width="32%" alt="Example 1" />
+  <img src="https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_2.png" width="32%" alt="Example 2" />
+  <img src="https://raw.githubusercontent.com/huuduong99/wrap_and_limit/refs/heads/master/example_image_3.png" width="32%" alt="Example 3" />
+</p>
 
 ## Getting started
 

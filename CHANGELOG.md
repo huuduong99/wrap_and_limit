@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Update README example images layout.
+
 ## 0.0.4
 
 * Reorder and format CHANGELOG.md.
