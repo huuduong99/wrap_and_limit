@@ -7,3 +7,8 @@
 
 * Update code format  
 * Update README.md documnent
+
+## 0.0.3
+
+* Remove `provider` dependency and use Flutter native `ListenableBuilder`.
+

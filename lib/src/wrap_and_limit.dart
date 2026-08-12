@@ -6,7 +6,6 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:wrap_and_limit/src/measure_size.dart';
 import 'package:wrap_and_limit/src/wrap_and_limit_controller.dart';
 
@@ -133,56 +132,54 @@ class _WrapAndLimitState extends State<WrapAndLimit> {
       builder: (context, constraints) {
         // Update the maximum width
         _controller.updateMaxWidth(constraints.maxWidth);
-        return ChangeNotifierProvider<WrapAndLimitController>.value(
-          value: _controller,
-          child: Consumer<WrapAndLimitController>(
-            builder: (context, controller, child) {
-              // When the number of children to display has been calculated
-              if (controller.isCounted) {
-                return SizedBox(
-                  width: constraints.maxWidth,
-                  child: Wrap(
-                    spacing: widget.spacing,
-                    runSpacing: widget.runSpacing,
-                    alignment: widget.alignment,
-                    children: [
-                      // Display the children that fit within maxRow
-                      ...widget.children.take(controller.showChildCount),
-                      // Display the overflow widget if there is overflow
-                      if (controller.hasOverflow)
-                        widget.overflowWidget(
-                          widget.children.length - controller.showChildCount,
-                        ),
-                    ],
-                  ),
-                );
-              } else {
-                // Measure the size of the child widgets and the overflow widget
-                return SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    key: controller.rowKey,
-                    children: [
-                      ...List.generate(widget.children.length, (index) {
-                        return MeasureSize(
-                          onChange: (Size size) {
-                            controller.updateChildrenSize(index, size);
-                          },
-                          child: widget.children[index],
-                        );
-                      }),
-                      MeasureSize(
-                        child: widget.overflowWidget(0),
-                        onChange: (size) {
-                          controller.updateOverflowSize(size);
-                        },
+        return ListenableBuilder(
+          listenable: _controller,
+          builder: (context, child) {
+            // When the number of children to display has been calculated
+            if (_controller.isCounted) {
+              return SizedBox(
+                width: constraints.maxWidth,
+                child: Wrap(
+                  spacing: widget.spacing,
+                  runSpacing: widget.runSpacing,
+                  alignment: widget.alignment,
+                  children: [
+                    // Display the children that fit within maxRow
+                    ...widget.children.take(_controller.showChildCount),
+                    // Display the overflow widget if there is overflow
+                    if (_controller.hasOverflow)
+                      widget.overflowWidget(
+                        widget.children.length - _controller.showChildCount,
                       ),
-                    ],
-                  ),
-                );
-              }
-            },
-          ),
+                  ],
+                ),
+              );
+            } else {
+              // Measure the size of the child widgets and the overflow widget
+              return SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  key: _controller.rowKey,
+                  children: [
+                    ...List.generate(widget.children.length, (index) {
+                      return MeasureSize(
+                        onChange: (Size size) {
+                          _controller.updateChildrenSize(index, size);
+                        },
+                        child: widget.children[index],
+                      );
+                    }),
+                    MeasureSize(
+                      child: widget.overflowWidget(0),
+                      onChange: (size) {
+                        _controller.updateOverflowSize(size);
+                      },
+                    ),
+                  ],
+                ),
+              );
+            }
+          },
         );
       },
     );
